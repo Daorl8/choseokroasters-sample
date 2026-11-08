@@ -71,6 +71,9 @@ h1,h2,h3,p{ margin:0; }
 .dark .desc{ color:var(--night-soft); }
 .head{ display:grid; gap:12px; }
 @media (min-width:900px){ .head{ grid-template-columns:1fr 1fr; gap:56px; align-items:end; } .head .desc{ justify-self:end; } }
+/* 한 줄 고정 제목 (원두 섹션): 줄바꿈 없이 화면 폭에 맞춰 크기 조절, PC에선 제목 칸이 필요한 만큼 넓어짐 */
+.h2.one-line{ white-space:nowrap; font-size:clamp(1.5rem,7.2vw,3.5rem); }
+@media (min-width:900px){ .head.head-wide{ grid-template-columns:auto minmax(0,1fr); } }
 
 /* 버튼 */
 .btn{ display:inline-flex; align-items:center; justify-content:center; min-height:50px; padding:0 24px; border:1.5px solid currentColor; border-radius:2px; font-size:.92rem; font-weight:600; letter-spacing:.04em; transition:background .2s ease, color .2s ease; }
@@ -88,6 +91,8 @@ h1,h2,h3,p{ margin:0; }
 @media (hover:hover){ .nav a:hover{ color:var(--soft); } }
 .head-ig{ font-size:.84rem; font-weight:700; letter-spacing:.06em; }
 @media (min-width:900px){ .nav{ display:flex; } }
+/* PC: 메뉴를 화면 정가운데에 (양옆 칸을 같은 폭 1fr로) */
+@media (min-width:900px){ .site-head .wrap{ display:grid; grid-template-columns:minmax(0,1fr) auto minmax(0,1fr); gap:24px; } .head-ig{ justify-self:end; } }
 
 /* 히어로 (어두운 면 + 큰 한자) */
 .hero{ background:var(--night); color:var(--night-ink); padding:56px 0 72px; overflow:hidden; }
@@ -123,7 +128,7 @@ h1,h2,h3,p{ margin:0; }
 .dots i.h{ background:linear-gradient(90deg, var(--ink) 50%, transparent 50%); }
 .roast-lv{ font-family:var(--serif); font-weight:700; font-size:1rem; }
 /* 원두 그래픽 (사장님 제공 · 흰 바탕 jpg → multiply로 카드색에 녹임) */
-.bean .mark{ display:block; height:84px; width:auto; max-width:100%; margin:auto 0 30px; padding-top:28px; box-sizing:content-box; object-fit:contain; object-position:left center; mix-blend-mode:multiply; }
+.bean .mark{ display:block; height:84px; width:auto; max-width:100%; margin:auto auto 30px; padding-top:28px; box-sizing:content-box; object-fit:contain; object-position:center; mix-blend-mode:multiply; }
 .beans-note{ margin-top:18px; font-size:.84rem; color:var(--soft); }
 
 /* 로스팅 과정 */
@@ -212,8 +217,8 @@ h1,h2,h3,p{ margin:0; }
 
   <section class="sec" id="beans" aria-labelledby="beans-h">
     <div class="wrap">
-      <div class="head reveal">
-        <div><p class="kicker">Beans</p><h2 id="beans-h" class="h2">초석의 시그니처 블렌딩</h2></div>
+      <div class="head head-wide reveal">
+        <div><p class="kicker">Beans</p><h2 id="beans-h" class="h2 one-line">초석의 시그니처 블렌딩</h2></div>
         <p class="desc">초석은 건축에서 모든 구조를 지탱하는 시작점입니다. 우리는 커피 또한 기본에 충실한 구조와 균형 위에서 완성된다고 믿습니다. 이에 건축 용어를 차용해 각 블렌딩이 만들어내는 공간의 성격과 감각을 커피의 맛으로 표현했습니다.</p>
       </div>
       <div class="beans">

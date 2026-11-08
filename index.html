@@ -96,6 +96,7 @@ h1,h2,h3,p{ margin:0; }
 @media (min-width:900px){ .hero .wrap{ grid-template-columns:minmax(0,5fr) minmax(0,7fr); gap:56px; } }
 .hero .kicker{ color:var(--night-soft); }
 .hero h1{ margin-top:18px; font-family:var(--serif); font-weight:900; font-size:clamp(6rem,26vw,13rem); line-height:.9; letter-spacing:.02em; }
+.hero h1 .hero-logo{ width:min(100%,420px); height:auto; }
 .hero h1 small{ display:block; margin-top:18px; font-family:var(--sans); font-weight:600; font-size:clamp(.95rem,1.6vw,1.1rem); letter-spacing:.3em; color:var(--night-soft); }
 .hero .lead{ margin-top:28px; font-family:var(--serif); font-weight:600; font-size:clamp(1.25rem,2.6vw,1.6rem); line-height:1.55; }
 .hero .meaning{ margin-top:12px; color:var(--night-soft); font-size:.92rem; font-family:var(--serif); font-weight:500; }
@@ -121,12 +122,9 @@ h1,h2,h3,p{ margin:0; }
 .dots i.f{ background:var(--ink); }
 .dots i.h{ background:linear-gradient(90deg, var(--ink) 50%, transparent 50%); }
 .roast-lv{ font-family:var(--serif); font-weight:700; font-size:1rem; }
-.bean svg{ display:block; width:calc(100% + 52px); margin:22px -26px 0; height:96px; }
+/* 원두 그래픽 (사장님 제공 · 흰 바탕 jpg → multiply로 카드색에 녹임) */
+.bean .mark{ display:block; height:84px; width:auto; max-width:100%; margin:auto 0 30px; padding-top:28px; box-sizing:content-box; object-fit:contain; object-position:left center; mix-blend-mode:multiply; }
 .beans-note{ margin-top:18px; font-size:.84rem; color:var(--soft); }
-.bean-pics{ display:grid; grid-template-columns:2fr 1fr; gap:14px; margin-top:22px; }
-.bean-pics img{ width:100%; height:100%; object-fit:cover; border-radius:2px; }
-.bean-pics .a{ aspect-ratio:16/10; } .bean-pics .b{ aspect-ratio:4/5; }
-@media (max-width:899px){ .bean-pics{ grid-template-columns:1fr 1fr; } .bean-pics .a{ grid-column:1 / -1; } .bean-pics .b{ aspect-ratio:1; } }
 
 /* 로스팅 과정 */
 .steps{ display:grid; gap:18px; margin-top:52px; counter-reset:s; }
@@ -186,20 +184,6 @@ h1,h2,h3,p{ margin:0; }
 </head>
 <body>
 
-<!-- 원두 카드 하단 능선 선 그림 (재사용) -->
-<svg width="0" height="0" style="position:absolute" aria-hidden="true">
-  <symbol id="ridge" viewBox="0 0 400 96" preserveAspectRatio="none">
-    <g fill="none" stroke="#161616" stroke-width="1">
-      <path d="M0 40 C60 10 110 60 170 34 S280 8 330 30 S390 52 400 44"/>
-      <path d="M0 48 C70 20 120 66 180 42 S290 16 340 38 S392 60 400 52"/>
-      <path d="M0 56 C64 34 126 72 186 50 S296 26 346 46 S394 66 400 60"/>
-      <path d="M0 63 C58 46 132 78 192 58 S300 36 352 54 S396 72 400 68"/>
-      <path d="M0 70 C66 56 136 84 198 66 S306 46 358 62 S397 78 400 75"/>
-      <path d="M0 77 C72 66 140 90 204 74 S312 56 364 70 S398 84 400 82"/>
-      <path d="M0 84 C78 76 146 94 210 82 S318 66 370 78 S399 90 400 89"/>
-    </g>
-  </symbol>
-</svg>
 
 <header class="site-head">
   <div class="wrap">
@@ -214,7 +198,7 @@ h1,h2,h3,p{ margin:0; }
     <div class="wrap">
       <div class="reveal">
         <p class="kicker">Coffee Roasters · Est. 2024</p>
-        <h1>礎石<small>CHOSEOK ROASTERS</small></h1>
+        <h1><img class="hero-logo" src="cs-hero-logo.webp" alt="礎石 CHOSEOK ROASTERS" width="472" height="259" /></h1>
         <p class="lead">본질에 집중하여<br />초석을 다져나가는 커피 브랜드</p>
         <p class="meaning">礎石(초석) · 집을 세울 때 가장 먼저 놓는 주춧돌</p>
         <div class="cta">
@@ -229,7 +213,7 @@ h1,h2,h3,p{ margin:0; }
   <section class="sec" id="beans" aria-labelledby="beans-h">
     <div class="wrap">
       <div class="head reveal">
-        <div><p class="kicker">Beans</p><h2 id="beans-h" class="h2">세 가지 <span class="han">이름</span>의 원두</h2></div>
+        <div><p class="kicker">Beans</p><h2 id="beans-h" class="h2">초석의 시그니처 블렌딩</h2></div>
         <p class="desc">초석은 건축에서 모든 구조를 지탱하는 시작점입니다. 우리는 커피 또한 기본에 충실한 구조와 균형 위에서 완성된다고 믿습니다. 이에 건축 용어를 차용해 각 블렌딩이 만들어내는 공간의 성격과 감각을 커피의 맛으로 표현했습니다.</p>
       </div>
       <div class="beans">
@@ -243,7 +227,7 @@ h1,h2,h3,p{ margin:0; }
             <span>무게감</span><span class="dots"><span class="sr">5점 중 3.5</span><i class="f"></i><i class="f"></i><i class="f"></i><i class="h"></i><i></i></span>
             <span>로스팅</span><span class="roast-lv">Medium Dark</span>
           </div>
-          <svg aria-hidden="true"><use href="#ridge"/></svg>
+          <img class="mark" loading="lazy" src="cs-bean-eumyeong.webp" alt="" width="531" height="300" />
         </article>
         <article class="bean reveal">
           <h3>채광<span>[採光]</span></h3>
@@ -255,7 +239,7 @@ h1,h2,h3,p{ margin:0; }
             <span>무게감</span><span class="dots"><span class="sr">5점 중 1.5</span><i class="f"></i><i class="h"></i><i></i><i></i><i></i></span>
             <span>로스팅</span><span class="roast-lv">Medium Light</span>
           </div>
-          <svg aria-hidden="true"><use href="#ridge"/></svg>
+          <img class="mark" loading="lazy" src="cs-bean-chaegwang.webp" alt="" width="398" height="118" />
         </article>
         <article class="bean reveal">
           <h3>정적<span>[靜寂]</span></h3>
@@ -267,14 +251,10 @@ h1,h2,h3,p{ margin:0; }
             <span>무게감</span><span class="dots"><span class="sr">5점 중 3</span><i class="f"></i><i class="f"></i><i class="f"></i><i></i><i></i></span>
             <span>로스팅</span><span class="roast-lv">Medium Dark</span>
           </div>
-          <svg aria-hidden="true"><use href="#ridge"/></svg>
+          <img class="mark" loading="lazy" src="cs-bean-jeongjeok.webp" alt="" width="386" height="134" />
         </article>
       </div>
       <p class="beans-note reveal">원두 구성은 시즌에 따라 바뀔 수 있어요. 원두 구매 · 문의는 인스타그램 DM으로 남겨 주세요.</p>
-      <div class="bean-pics reveal">
-        <img class="a" loading="lazy" src="cs-cards.webp" alt="아크릴 판 아래 놓인 원두 카드 세 장" width="1200" height="750" />
-        <img class="b" loading="lazy" src="cs-bag.webp" alt="채광 採光 원두 봉투를 든 손" width="800" height="1000" />
-      </div>
     </div>
   </section>
 
@@ -286,7 +266,7 @@ h1,h2,h3,p{ margin:0; }
       </div>
       <div class="steps">
         <figure class="reveal"><img loading="lazy" src="cs-green.webp" alt="생두 자루가 쌓인 유리방" width="800" height="1000" /><figcaption><b>생두 · Green</b><span>생두를 고르고 보관합니다.</span></figcaption></figure>
-        <figure class="reveal"><img loading="lazy" src="cs-roast.webp" alt="원두를 식히는 로스터 기계" width="800" height="999" /><figcaption><b>로스팅 · Roast</b><span>원두마다 맞는 정도로 직접 볶습니다.</span></figcaption></figure>
+        <figure class="reveal"><img loading="lazy" src="cs-roast.webp" alt="로스터 기계 앞에서 원두를 볶는 로스터" width="900" height="1200" /><figcaption><b>로스팅 · Roast</b><span>원두마다 맞는 정도로 직접 볶습니다.</span></figcaption></figure>
         <figure class="reveal"><img loading="lazy" src="cs-brew.webp" alt="바에서 드리퍼에 물을 붓는 바리스타" width="800" height="1200" style="object-position:50% 25%" /><figcaption><b>브루잉 · Brew</b><span>바에서 한 잔씩 내립니다.</span></figcaption></figure>
       </div>
     </div>
@@ -340,7 +320,7 @@ h1,h2,h3,p{ margin:0; }
           <h3>초석로스터스 국가정원</h3>
           <dl>
             <div><dt>주소</dt><dd>울산 중구 태화강국가정원길 217 1~2층<small>1층 커피바 · 2층 라운지 · 태화강 국가정원 주차장 이용</small></dd></div>
-            <div><dt>시간</dt><dd>~22:00<small>오픈 시간은 네이버 플레이스에서 확인해 주세요</small></dd></div>
+            <div><dt>시간</dt><dd>08:00~22:00</dd></div>
             <div><dt>전화</dt><dd><a href="tel:050713241680">0507-1324-1680</a></dd></div>
           </dl>
           <div class="links"><a class="btn fill" href="https://map.naver.com/p/entry/place/2058198826" target="_blank" rel="noopener">네이버 길찾기</a></div>

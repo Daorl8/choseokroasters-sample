@@ -2,14 +2,15 @@
 
 ```
 choseokroasters-sample/
-├─ index.html              단일 파일 (CSS·JS 인라인, 능선 SVG symbol 포함)
+├─ index.html              단일 파일 (CSS·JS 인라인)
 ├─ wrangler.toml           name = choseokroasters-sample → choseokroasters-sample.lgt3232.workers.dev (Worker 이름도 같게)
 ├─ .assetsignore           img/ · 문서 · index_*.html · _deploy 배포 제외
 ├─ cs-notoserif.woff2      한자 · 제목 (Noto Serif KR 500–900, 쓰는 글자만)
 ├─ cs-pretendard.woff2     본문 (Pretendard 400–700, 한자 없음)
 ├─ cs-logo.webp / cs-logo-w.webp   검정 · 흰색 배지 로고 · favicon.png
 ├─ cs-hero.webp            히어로 팀 사진 (v0.2 · img/hero.jpg)
-├─ cs-cards / cs-bag .webp         Beans 사진
+├─ cs-hero-logo.webp       히어로 礎石 로고 (흰색 · v0.3 · 사장님 누끼)
+├─ cs-bean-eumyeong / chaegwang / jeongjeok .webp   원두 카드 그래픽 (img/1_jpg · multiply)
 ├─ cs-green / cs-roast / cs-brew .webp   Roasting 3단계 (brew = img/brewing.jpg)
 ├─ cs-bakery / cs-bakery-team .webp      베이커리팀 섹션 (#cups)
 ├─ cs-space-1~3.webp       Space (img/cpn1~3)

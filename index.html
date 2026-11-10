@@ -76,6 +76,9 @@ h1,h2,h3,p{ margin:0; }
 /* 원두 섹션: 제목 칸은 글자 폭만큼, 설명(문장마다 줄바꿈)은 오른쪽 나머지 칸 전체 폭 */
 @media (min-width:900px){ .head.head-wide{ grid-template-columns:auto minmax(0,1fr); } }
 .desc.desc-lines{ max-width:none; }
+/* 모바일에서만 줄바꿈 */
+.m-br{ display:none; }
+@media (max-width:899px){ .m-br{ display:inline; } }
 
 /* 버튼 */
 .btn{ display:inline-flex; align-items:center; justify-content:center; min-height:50px; padding:0 24px; border:1.5px solid currentColor; border-radius:2px; font-size:.92rem; font-weight:600; letter-spacing:.04em; transition:background .2s ease, color .2s ease; }
@@ -269,7 +272,7 @@ h1,h2,h3,p{ margin:0; }
     <div class="wrap">
       <div class="head reveal">
         <div><p class="kicker soft">Roasting</p><h2 id="roast-h" class="h2">고르고, 볶고, 내리다</h2></div>
-        <p class="desc">생두를 고르는 일부터 한 잔을 내리는 일까지, 커피의 처음과 끝을 직접 다룹니다.</p>
+        <p class="desc">생두를 고르는 일부터 한 잔을 내리는 일까지, <br class="m-br" />커피의 처음과 끝을 직접 다룹니다.</p>
       </div>
       <div class="steps">
         <figure class="reveal"><img loading="lazy" src="cs-green.webp" alt="생두 자루가 쌓인 유리방" width="800" height="1000" /><figcaption><b>생두 · Green</b><span>생두를 고르고 보관합니다.</span></figcaption></figure>
@@ -283,7 +286,7 @@ h1,h2,h3,p{ margin:0; }
     <div class="wrap">
       <div class="head reveal">
         <div><p class="kicker">Coffee &amp; More</p><h2 id="cups-h" class="h2">커피와 함께 페어링을 위한 베이커리팀</h2></div>
-        <p class="desc">원두의 결을 살린 커피와 시그니처 음료, 함께 즐기는 디저트.</p>
+        <p class="desc">원두의 결을 살린 커피와 시그니처 음료, <br class="m-br" />함께 즐기는 디저트.</p>
       </div>
       <div class="cups">
         <img class="reveal" loading="lazy" src="cs-bakery.webp" alt="갓 구운 빵이 가득 놓인 베이커리 랙" width="800" height="1067" />
@@ -296,7 +299,7 @@ h1,h2,h3,p{ margin:0; }
     <div class="wrap">
       <div class="head reveal">
         <div><p class="kicker soft">Space</p><h2 id="space-h" class="h2">커피 · 사람 · 자연</h2></div>
-        <p class="desc">커피에 집중할 수 있도록 덜어낸 공간. 지점마다 다른 풍경을 담았어요.</p>
+        <p class="desc">커피에 집중할 수 있도록 덜어낸 공간. <br class="m-br" />지점마다 다른 풍경을 담았어요.</p>
       </div>
       <div class="space">
         <img class="reveal" loading="lazy" src="cs-space-1.webp" alt="통창 너머 나무가 보이는 매장과 바에서 일하는 사람들의 실루엣" width="1200" height="800" />
